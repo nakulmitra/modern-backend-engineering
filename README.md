@@ -4,6 +4,12 @@ A collection of production-ready backend engineering concepts implemented using 
 
 This repository is designed for developers who want to go beyond CRUD applications and understand how real-world backend systems are built.
 
+# Topics
+* [Redis Caching](https://github.com/nakulmitra/java-tutorial/blob/master/project/instagram-clone-likes.md)
+* [Build Production-Ready Idempotent APIs using Spring Boot, Redis & PostgreSQL](https://github.com/nakulmitra/idempotency-design)
+* [Idempotency with Distributed Locking](https://github.com/nakulmitra/idempotency-design/blob/master/phase2-distributed-locking.md)
+* [Polling vs Webhook](https://github.com/nakulmitra/polling-vs-webhook)
+
 # What You'll Learn
 
 * API Design
@@ -21,12 +27,12 @@ This repository is designed for developers who want to go beyond CRUD applicatio
 
 Each topic includes:
 
-* ✅ Detailed Theory
-* ✅ Architecture Diagrams
-* ✅ Flow Diagrams
-* ✅ Spring Boot Implementation
-* ✅ Production Considerations
-* ✅ Best Practices
+* Detailed Theory
+* Architecture Diagrams
+* Flow Diagrams
+* Spring Boot Implementation
+* Production Considerations
+* Best Practices
 
 # Learning Roadmap
 
@@ -76,12 +82,6 @@ diagrams/
 images/
     Screenshots and illustrations
 ```
-
-# Topics
-* [Redis Caching](https://github.com/nakulmitra/java-tutorial/blob/master/project/instagram-clone-likes.md)
-* [Build Production-Ready Idempotent APIs using Spring Boot, Redis & PostgreSQL](https://github.com/nakulmitra/idempotency-design)
-* [Idempotency with Distributed Locking](https://github.com/nakulmitra/idempotency-design/blob/master/phase2-distributed-locking.md)
-* [Polling vs Webhook](https://github.com/nakulmitra/polling-vs-webhook)
 
 # Technology Stack
 
