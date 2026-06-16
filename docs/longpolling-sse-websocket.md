@@ -31,7 +31,7 @@ To solve this problem, various communication techniques have evolved:
 
 Each approach has different characteristics, advantages, and use cases.
 
-# The Real-Time Communication Problem
+## The Real-Time Communication Problem
 
 Consider a chat application.
 
@@ -49,7 +49,7 @@ How does the server notify User B that a new message has arrived?
 
 There are multiple approaches.
 
-# Traditional Polling
+### Traditional Polling
 
 Before understanding Long Polling, let's briefly revisit traditional polling.
 
@@ -72,9 +72,9 @@ Server ---> Yes
 
 The client repeatedly sends requests at fixed intervals.
 
-# Problems with Traditional Polling
+### Problems with Traditional Polling
 
-## Excessive Requests
+#### Excessive Requests
 
 Most requests return:
 
@@ -84,15 +84,15 @@ No New Data
 
 which wastes resources.
 
-## Increased Network Traffic
+#### Increased Network Traffic
 
 Thousands of clients continuously polling can generate enormous traffic.
 
-## Increased Server Load
+### Increased Server Load
 
 The server must process every polling request.
 
-## Delayed Updates
+### Delayed Updates
 
 Updates are only received during the next polling cycle.
 
@@ -116,7 +116,7 @@ Delay:
 
 To overcome these issues, Long Polling was introduced.
 
-# What is Long Polling?
+## What is Long Polling?
 
 Long Polling is an improved version of traditional polling.
 
@@ -125,7 +125,7 @@ Instead of responding immediately when no data is available, the server keeps th
 * New data becomes available, or
 * A timeout occurs.
 
-# Long Polling Workflow
+## Long Polling Workflow
 
 Step 1:
 
@@ -169,7 +169,7 @@ Step 5:
 
 Client receives the response and immediately creates a new request.
 
-# Long Polling Architecture
+## Long Polling Architecture
 
 ```text
 Client
@@ -191,28 +191,28 @@ Client
    |------ New Request
 ```
 
-# Advantages of Long Polling
+## Advantages of Long Polling
 
 * `Better Than Traditional Polling:` Fewer unnecessary requests are generated.
 * `Uses Standard HTTP:` No special protocol is required.
 * `Easy to Implement:` Most web frameworks support Long Polling.
 * `Works Through Firewalls and Proxies:` Since it uses HTTP, infrastructure compatibility is excellent.
 
-# Disadvantages of Long Polling
+## Disadvantages of Long Polling
 
 * `Connection Overhead:` A new HTTP request must still be created after every response.
 * `High Resource Consumption:` Thousands of waiting requests consume server threads and memory.
 * `Not Ideal for Massive Scale:` Large chat systems may struggle with Long Polling.
 * `Higher Latency Than WebSocket:` Communication is not truly persistent.
 
-# Real-World Use Cases of Long Polling
+## Real-World Use Cases of Long Polling
 
 * Legacy applications
 * Systems without WebSocket support
 * Basic chat applications
 * Notification systems with moderate traffic
 
-# What is Server-Sent Events (SSE)?
+## What is Server-Sent Events (SSE)?
 
 Server-Sent Events (SSE) allow a server to continuously push updates to a client over a single HTTP connection.
 
@@ -222,7 +222,7 @@ Unlike Long Polling:
 * Multiple messages can be sent
 * No repeated requests are required
 
-# SSE Workflow
+## SSE Workflow
 
 Step 1:
 
@@ -247,7 +247,7 @@ Event 3
 Event 4
 ```
 
-# SSE Architecture
+## SSE Architecture
 
 ```text
 Client
@@ -266,7 +266,7 @@ One connection.
 
 Multiple updates.
 
-# Key Characteristic of SSE
+## Key Characteristic of SSE
 
 Communication is one-way.
 
@@ -278,7 +278,7 @@ The server can send updates.
 
 The client cannot send data using the same connection.
 
-# Advantages of SSE
+## Advantages of SSE
 
 * `Persistent Connection:` Only one HTTP connection is required.
 * `Lower Network Overhead:` No repeated requests.
@@ -286,15 +286,15 @@ The client cannot send data using the same connection.
 * `Automatic Reconnection:` Browsers automatically reconnect when connections are lost.
 * `Lightweight:` Consumes fewer resources than Long Polling.
 
-# Disadvantages of SSE
+## Disadvantages of SSE
 
 * `One-Way Communication:` Only server-to-client communication is possible.
 * `Not Suitable for Chat Applications:` Chat systems require both users to send messages.
 * `Browser Limitations:` Although modern browser support is excellent, SSE is less flexible than WebSockets.
 
-# Real-World Use Cases of SSE
+## Real-World Use Cases of SSE
 
-## Live Notifications
+### Live Notifications
 
 ```text
 Instagram Notifications
@@ -302,7 +302,7 @@ Facebook Notifications
 LinkedIn Notifications
 ```
 
-## Stock Market Updates
+### Stock Market Updates
 
 ```text
 AAPL +2%
@@ -310,13 +310,13 @@ GOOGL -1%
 MSFT +3%
 ```
 
-## Live Sports Scores
+### Live Sports Scores
 
 ```text
 India 245/3
 ```
 
-## Monitoring Dashboards
+### Monitoring Dashboards
 
 ```text
 CPU Usage
@@ -324,7 +324,7 @@ Memory Usage
 Disk Usage
 ```
 
-# What is WebSocket?
+## What is WebSocket?
 
 WebSocket is a communication protocol that creates a persistent full-duplex connection between the client and server.
 
@@ -332,7 +332,7 @@ Full-duplex means:
 
 Both sides can send messages at any time.
 
-# WebSocket Handshake
+## WebSocket Handshake
 
 Initially:
 
@@ -356,7 +356,7 @@ Client <----> Server
 
 Communication becomes bi-directional.
 
-# WebSocket Architecture
+## WebSocket Architecture
 
 ```text
 Client
@@ -371,7 +371,7 @@ Single connection.
 
 Unlimited message exchange.
 
-# Full-Duplex Communication
+## Full-Duplex Communication
 
 Unlike SSE:
 
@@ -387,7 +387,7 @@ Client <----> Server
 
 Both directions simultaneously.
 
-# Advantages of WebSocket
+## Advantages of WebSocket
 
 * `Real-Time Communication:` Messages are delivered immediately.
 * `Full-Duplex Communication:` Both client and server can send messages at any time.
@@ -395,38 +395,38 @@ Both directions simultaneously.
 * `Efficient Connection Management:` One connection serves all communication needs.
 * `Ideal for High-Frequency Updates:` Perfect for chat systems and online gaming.
 
-# Disadvantages of WebSocket
+## Disadvantages of WebSocket
 
 * `More Complex:` Requires WebSocket-specific implementation.
 * `Connection Management:` Applications must handle **Connection establishment**, **Reconnection**, **Heartbeats** & **Disconnects**
 * `Infrastructure Considerations:` Load balancers and proxies must support WebSocket traffic.
 
-# Real-World Use Cases of WebSocket
+## Real-World Use Cases of WebSocket
 
-## Chat Applications
+### Chat Applications
 
 * WhatsApp
 * Slack
 * Discord
 * Microsoft Teams
 
-## Online Gaming
+### Online Gaming
 
 Players exchange updates continuously.
 
-## Collaborative Editing
+### Collaborative Editing
 
 Google Docs style applications.
 
-## Trading Platforms
+### Trading Platforms
 
 Stock and cryptocurrency exchanges.
 
-## Live Auctions
+### Live Auctions
 
 Real-time bidding systems.
 
-# Long Polling vs SSE vs WebSocket
+## Long Polling vs SSE vs WebSocket
 
 | Feature              | Long Polling      | SSE        | WebSocket  |
 | -------------------- | ----------------- | ---------- | ---------- |
@@ -442,23 +442,23 @@ Real-time bidding systems.
 | Browser Support      | Excellent         | Excellent  | Excellent  |
 | Scalability          | Medium            | High       | Very High  |
 
-# Choosing the Right Technology
+## Choosing the Right Technology
 
-## Use Long Polling When
+### Use Long Polling When
 
 * Simplicity is important
 * Existing infrastructure only supports HTTP
 * Real-time requirements are moderate
 * Traffic volume is relatively low
 
-## Use SSE When
+### Use SSE When
 
 * Updates only flow from server to client
 * Live notifications are required
 * Monitoring dashboards are needed
 * Stock prices or sports scores must be streamed
 
-## Use WebSocket When
+### Use WebSocket When
 
 * Two-way communication is required
 * Building chat applications
@@ -466,23 +466,23 @@ Real-time bidding systems.
 * Building collaborative applications
 * Ultra-low latency is important
 
-# Interview Questions
+## Interview Questions
 
-## What is Long Polling?
+### What is Long Polling?
 
 Long Polling is a technique where the server keeps an HTTP request open until new data becomes available or a timeout occurs.
 
-## How is Long Polling different from traditional Polling?
+### How is Long Polling different from traditional Polling?
 
 Traditional polling immediately receives a response and creates new requests periodically.
 
 Long Polling keeps the request open until data becomes available.
 
-## What is SSE?
+### What is SSE?
 
 Server-Sent Events allow a server to continuously push updates to a client over a single HTTP connection.
 
-## What is the main limitation of SSE?
+### What is the main limitation of SSE?
 
 SSE supports only one-way communication:
 
@@ -490,15 +490,15 @@ SSE supports only one-way communication:
 Server ---> Client
 ```
 
-## What is WebSocket?
+### What is WebSocket?
 
 WebSocket is a protocol that provides persistent, full-duplex communication between client and server.
 
-## Why is WebSocket preferred for chat applications?
+### Why is WebSocket preferred for chat applications?
 
 Because both client and server can send messages instantly over the same connection.
 
-# Conclusion
+## Conclusion
 
 Long Polling, Server-Sent Events (SSE), and WebSocket are all solutions for enabling real-time communication.
 
