@@ -31,7 +31,7 @@ To solve this problem, various communication techniques have evolved:
 
 Each approach has different characteristics, advantages, and use cases.
 
-> [Code](../projects/ChatApplication/) 
+> [Explore Code](../projects/ChatApplication/) 
 
 ## The Real-Time Communication Problem
 
