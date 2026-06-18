@@ -14,6 +14,8 @@ Examples include:
 * Stock market updates
 * Collaborative document editing
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/pWTBICCp2T4)](https://youtu.be/pWTBICCp2T4)
+
 In traditional HTTP communication, the client sends a request and the server responds.
 
 ```text
