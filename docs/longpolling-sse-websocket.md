@@ -47,9 +47,7 @@ Hello
 
 User B should receive that message instantly.
 
-The challenge is:
-
-How does the server notify User B that a new message has arrived?
+The challenge is ***How does the server notify User B that a new message has arrived?***
 
 There are multiple approaches.
 
@@ -332,9 +330,7 @@ Disk Usage
 
 WebSocket is a communication protocol that creates a persistent full-duplex connection between the client and server.
 
-Full-duplex means:
-
-Both sides can send messages at any time.
+Full-duplex means ***both sides can send messages at any time.***
 
 ## WebSocket Handshake
 
