@@ -38,33 +38,33 @@ Each topic includes:
 # Learning Roadmap
 
 ```
-HTTP APIs
-      │
-      ▼
-REST Principles
-      │
-      ▼
-Idempotency
-      │
-      ▼
+     HTTP APIs
+         │
+         ▼
+   REST Principles
+         │
+         ▼
+    Idempotency
+         │
+         ▼
 Distributed Locking
-      │
-      ▼
-Polling vs Webhooks
-      │
-      ▼
-Rate Limiting
-      │
-      ▼
-Caching
-      │
-      ▼
-Messaging (Kafka)
-      │
-      ▼
-Microservices
-      │
-      ▼
+         │
+         ▼
+ Polling vs Webhooks
+         │
+         ▼
+   Rate Limiting
+         │
+         ▼
+      Caching
+         │
+         ▼
+   Messaging (Kafka)
+         │
+         ▼
+   Microservices
+         │
+         ▼
 Distributed System Design
 ```
 
