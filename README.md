@@ -1,12 +1,12 @@
 # Modern Backend Engineering
 
-A collection of production-ready backend engineering concepts implemented using **Java, Spring Boot, Redis, PostgreSQL, and modern distributed system design principles**.
+A collection of production ready backend engineering concepts implemented using **Java, Spring Boot, Redis, PostgreSQL, and modern distributed system design principles**.
 
-This repository is designed for developers who want to go beyond CRUD applications and understand how real-world backend systems are built.
+This repository is designed for developers who want to go beyond CRUD applications and understand how real world backend systems are built.
 
 # Topics
 * [Redis Caching](https://github.com/nakulmitra/java-tutorial/blob/master/project/instagram-clone-likes.md)
-* [Build Production-Ready Idempotent APIs using Spring Boot, Redis & PostgreSQL](https://github.com/nakulmitra/idempotency-design)
+* [Build Production Ready Idempotent APIs using Spring Boot, Redis & PostgreSQL](https://github.com/nakulmitra/idempotency-design)
 * [Idempotency with Distributed Locking](https://github.com/nakulmitra/idempotency-design/blob/master/phase2-distributed-locking.md)
 * [Polling vs Webhook](https://github.com/nakulmitra/polling-vs-webhook)
 * [Long Polling vs Server-Sent Events (SSE) vs WebSocket](/docs/longpolling-sse-websocket.md)
@@ -111,13 +111,13 @@ Every topic includes:
 
 * Why the problem exists
 * Common mistakes
-* Real-world architecture
+* Real world architecture
 * Complete implementation
 * Production improvements
 
 # YouTube
 
-All implementations are explained step-by-step on the **Dev Portal** YouTube channel with complete coding walkthroughs and architecture discussions.
+All implementations are explained step by step on the **Dev Portal** YouTube channel with complete coding walkthroughs and architecture discussions.
 
 If you find this repository helpful, consider giving it a ⭐ and sharing it with other backend developers.
 
