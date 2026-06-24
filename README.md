@@ -1,6 +1,6 @@
 # Modern Backend Engineering
 
-A collection of production ready backend engineering concepts implemented using **Java, Spring Boot, Redis, PostgreSQL, and modern distributed system design principles**.
+A collection of production ready backend engineering concepts implemented using **Java, Spring Boot, Redis, PostgreSQL and modern distributed system design principles**.
 
 This repository is designed for developers who want to go beyond CRUD applications and understand how real world backend systems are built.
 
