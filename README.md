@@ -121,8 +121,6 @@ All implementations are explained step by step on the [Dev Portal](https://www.y
 
 If you find this repository helpful, consider giving it a ⭐ and sharing it with other backend developers.
 
-Happy Coding!
-
 ## Support
 If this helped you, consider supporting my tutorials
 
