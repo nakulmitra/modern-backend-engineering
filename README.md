@@ -119,7 +119,7 @@ Every topic includes:
 
 All implementations are explained step by step on the [Dev Portal](https://www.youtube.com/@DevPortal2114) YouTube channel with complete coding walkthroughs and architecture discussions.
 
-If you find this repository helpful, consider giving it a ⭐ and sharing it with other backend developers.
+If you find this repository helpful, consider giving it a ⭐ and sharing it with other developers.
 
 ## Support
 If this helped you, consider supporting my tutorials
