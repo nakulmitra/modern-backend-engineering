@@ -4,13 +4,9 @@
 
 Concurrency is one of the biggest challenges in backend systems.
 
-Imagine an e-commerce application where there is only **one iPhone left in stock**.
+Imagine an e-commerce application where there is only **one iPhone left in stock**. Two customers click the **Buy Now** button at almost the same time.
 
-Two customers click the **Buy Now** button at almost the same time.
-
-Without proper concurrency control, both customers may successfully place the order even though only one product exists.
-
-This problem is known as **Overselling**, and it occurs because multiple transactions modify the same data concurrently.
+Without proper concurrency control, both customers may successfully place the order even though only one product exists. This problem is known as **Overselling**, and it occurs because multiple transactions modify the same data concurrently.
 
 In this guide, we'll understand:
 
@@ -60,9 +56,7 @@ Orders Created : 2
 Available Stock : 0
 ```
 
-The application has sold two products while only one existed.
-
-This is known as the **Lost Update Problem** or **Overselling Problem**.
+The application has sold two products while only one existed. This is known as the **Lost Update Problem** or **Overselling Problem**.
 
 # Why Does This Happen?
 
@@ -99,9 +93,7 @@ Unfortunately, this is not true.
 * Isolation
 * Durability
 
-However, it **does not automatically prevent two transactions from reading the same row simultaneously**.
-
-Both transactions can still execute successfully and overwrite each other's changes depending on the isolation level.
+However, it **does not automatically prevent two transactions from reading the same row simultaneously**. Both transactions can still execute successfully and overwrite each other's changes depending on the isolation level.
 
 # What is Database Locking?
 
@@ -121,13 +113,9 @@ Database Locking
 
 ## Concept
 
-Optimistic Locking assumes that conflicts are **rare**.
+Optimistic Locking assumes that conflicts are **rare**. Instead of locking the database row, it allows multiple transactions to read the data simultaneously.
 
-Instead of locking the database row, it allows multiple transactions to read the data simultaneously.
-
-Before updating the record, Hibernate checks whether another transaction has already modified it.
-
-This is achieved using a **version column**.
+Before updating the record, Hibernate checks whether another transaction has already modified it. This is achieved using a **version column**.
 
 ## Flow
 
@@ -216,9 +204,7 @@ OptimisticLockException
 
 ## Concept
 
-Pessimistic Locking assumes that conflicts are **common**.
-
-Instead of detecting conflicts later, it prevents them by locking the row immediately.
+Pessimistic Locking assumes that conflicts are **common**. Instead of detecting conflicts later, it prevents them by locking the row immediately.
 
 Other transactions must wait until the lock is released.
 
@@ -361,7 +347,7 @@ The `FOR UPDATE` clause locks the selected row until the transaction commits or 
 
 Most production systems use **both** strategies depending on the use case.
 
-### Amazon
+### E-commerce
 
 * Product catalog -> Optimistic Locking
 * Inventory updates -> Pessimistic Locking or distributed reservation systems
