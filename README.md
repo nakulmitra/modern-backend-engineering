@@ -10,6 +10,7 @@ This repository is designed for developers who want to go beyond CRUD applicatio
 * [Idempotency with Distributed Locking](https://github.com/nakulmitra/idempotency-design/blob/master/phase2-distributed-locking.md)
 * [Polling vs Webhook](https://github.com/nakulmitra/polling-vs-webhook)
 * [Long Polling vs Server-Sent Events (SSE) vs WebSocket](/docs/longpolling-sse-websocket.md)
+* [Optimistic Locking vs Pessimistic Locking](/docs/database-locking.md)
 
 # What You'll Learn
 
