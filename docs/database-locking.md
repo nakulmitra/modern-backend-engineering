@@ -82,9 +82,7 @@ Neither transaction is aware of the other.
 
 # Is @Transactional Enough?
 
-Many developers believe that using `@Transactional` automatically prevents concurrency issues.
-
-Unfortunately, this is not true.
+Many developers believe that using `@Transactional` automatically prevents concurrency issues. Unfortunately, this is not true.
 
 `@Transactional` provides:
 
@@ -120,23 +118,19 @@ Before updating the record, Hibernate checks whether another transaction has alr
 ## Flow
 
 ```text
-User A                     User B
+User A                          User B
 
-Read Version = 1      Read Version = 1
+Read Version = 1           Read Version = 1
 
-      │                     │
-      ▼                     ▼
-Update Version = 2
+      │                           │
+      ▼                           ▼
+Update Version = 2      Update WHERE Version = 1
 
-                            │
-                            ▼
-Update WHERE Version = 1
+                            No rows updated
 
-No rows updated
+                                  ↓
 
-↓
-
-OptimisticLockException
+                        OptimisticLockException
 ```
 
 ## Spring Boot Implementation
