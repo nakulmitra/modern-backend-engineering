@@ -31,7 +31,7 @@ public class DBLockingService {
 		product.setQuantity(product.getQuantity() - 1);
 		repoV1.save(product);
 
-		return "Product purchased sucessfully...";
+		return "Your order has been placed...";
 	}
 
 	@Transactional
@@ -47,7 +47,7 @@ public class DBLockingService {
 		product.setQuantity(product.getQuantity() - 1);
 		repoV2.save(product);
 
-		return "Product purchased sucessfully...";
+		return "Your order has been placed...";
 	}
 
 }

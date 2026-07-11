@@ -12,7 +12,7 @@ import jakarta.persistence.LockModeType;
 
 @Repository
 public interface ProductV1Repository extends JpaRepository<ProductV1, Long> {
-	
+
 	@Lock(LockModeType.PESSIMISTIC_WRITE)
 	Optional<ProductV1> findById(Long id);
 }
