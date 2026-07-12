@@ -8,6 +8,8 @@ Imagine an e-commerce application where there is only **one iPhone left in stock
 
 Without proper concurrency control, both customers may successfully place the order even though only one product exists. This problem is known as **Overselling**, and it occurs because multiple transactions modify the same data concurrently.
 
+> [Explore Code](../projects/DBLocking/)
+
 In this guide, we'll understand:
 
 * Why concurrency problems occur
