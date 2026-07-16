@@ -60,6 +60,8 @@ Available Stock : 0
 
 The application has sold two products while only one existed. This is known as the **Lost Update Problem** or **Overselling Problem**.
 
+![DB Locking](https://github.com/nakulmitra/modern-backend-engineering/blob/master/images/database-locking/Locking.png)
+
 # Why Does This Happen?
 
 Both transactions read the same data before either transaction commits.
