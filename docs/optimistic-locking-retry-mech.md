@@ -160,8 +160,6 @@ It does **not** ask:
 
 That business decision belongs to your application.
 
-![Flow Dig](https://github.com/nakulmitra/modern-backend-engineering/blob/master/images/database-locking/Optimistic%20Locking%20with%20Retry.png)
-
 # Why This Happens
 
 Let's visualize the execution.
@@ -319,6 +317,8 @@ If all retries fail:
 ```text
 Return Error
 ```
+
+![Flow Dig](https://github.com/nakulmitra/modern-backend-engineering/blob/master/images/database-locking/Optimistic%20Locking%20with%20Retry.png)
 
 # Spring Boot Implementation
 
