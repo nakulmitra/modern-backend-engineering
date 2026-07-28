@@ -148,15 +148,11 @@ Optimistic Locking detects **data conflicts**, not **business conflicts**.
 
 # How Optimistic Locking Works
 
-Optimistic Locking simply asks:
-
-> "Has another transaction modified this row since I read it?"
+Optimistic Locking simply asks ***Has another transaction modified this row since I read it?***
 
 If the answer is **Yes**, it throws an exception.
 
-It does **not** ask:
-
-> "Is there still stock available?"
+It does **not** ask ***Is there still stock available?***
 
 That business decision belongs to your application.
 
@@ -440,25 +436,25 @@ Production systems commonly use **Exponential Backoff**.
 ```text
     Attempt 1
     
-      100 ms
+     100 ms
     
        ↓
     
     Attempt 2
     
-      200 ms
+     200 ms
     
        ↓
     
     Attempt 3
     
-      400 ms
+     400 ms
     
        ↓
     
     Attempt 4
     
-      800 ms
+     800 ms
 ```
 
 This reduces contention and improves system stability under high load.
