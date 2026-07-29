@@ -11,6 +11,7 @@ This repository is designed for developers who want to go beyond CRUD applicatio
 * [Polling vs Webhook](https://github.com/nakulmitra/polling-vs-webhook)
 * [Long Polling vs Server-Sent Events (SSE) vs WebSocket](/docs/longpolling-sse-websocket.md)
 * [Optimistic Locking vs Pessimistic Locking](/docs/database-locking.md)
+* [Optimistic Locking Isn't Enough | Implementing Retry Mechanism in Spring Boot](/docs/optimistic-locking-retry-mech.md)
 
 # What You'll Learn
 
