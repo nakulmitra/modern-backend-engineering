@@ -1,6 +1,9 @@
 package com.example.dblocking.service;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,8 +37,25 @@ public class DBLockingService {
 		return "Your order has been placed...";
 	}
 
-	@Transactional
 	public String purchaseUsingOL(Long id) throws Exception {
+		for(int attempt = 1; attempt <= 3; attempt++) {
+			try {
+				purchase(id);
+				return "Your order has been placed...";
+			}catch(ObjectOptimisticLockingFailureException ex) {
+				if(attempt == 3) {
+					throw ex;
+				}
+				
+				System.out.println("retry again with attemp: " + attempt);
+			}
+		}
+		
+		throw new RuntimeException("Unable to place your order...");
+	}
+	
+	@Transactional
+	public void purchase(Long id) throws Exception {
 		ProductV2 product = repoV2.findById(id).orElseThrow(() -> new RuntimeException("Product not found..."));
 
 		if (product.getQuantity() <= 0) {
@@ -46,8 +66,6 @@ public class DBLockingService {
 
 		product.setQuantity(product.getQuantity() - 1);
 		repoV2.save(product);
-
-		return "Your order has been placed...";
 	}
 
 }
