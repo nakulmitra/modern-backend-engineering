@@ -29,6 +29,8 @@ Why?
 
 This is the problem we'll solve in this section.
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/9qye-qvogrs)](https://youtu.be/9qye-qvogrs)
+
 # Understanding the Problem
 
 Suppose the inventory contains:
