@@ -148,6 +148,8 @@ This is called a **False Conflict**.
 
 Optimistic Locking detects **data conflicts**, not **business conflicts**.
 
+> [Explore Code](../projects/DBLocking/)
+
 # How Optimistic Locking Works
 
 Optimistic Locking simply asks ***Has another transaction modified this row since I read it?***
@@ -529,35 +531,6 @@ When stock reaches zero:
 ```
 
 This behavior matches the business expectation.
-
-# Relationship with Previous Tutorials
-
-This tutorial builds on the previous videos in the series.
-
-```text
-Duplicate API Requests
-          │
-          ▼
-Idempotent APIs
-          │
-          ▼
-Redis Distributed Locking
-          │
-          ▼
-Optimistic Locking
-          │
-          ▼
-Retry Mechanism
-```
-
-Each concept solves a different problem:
-
-| Concept                | Solves                                                     |
-| ---------------------- | ---------------------------------------------------------- |
-| Idempotency            | Duplicate client retries                                   |
-| Redis Distributed Lock | Concurrent execution across multiple application instances |
-| Optimistic Locking     | Detects concurrent updates                                 |
-| Retry Mechanism        | Resolves temporary optimistic locking conflicts            |
 
 # Key Takeaways
 
