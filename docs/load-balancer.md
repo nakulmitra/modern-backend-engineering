@@ -1121,67 +1121,7 @@ Dynamic Service Discovery
 Highly Available Load Balancer
 ```
 
-# 31. Suggested Future Improvements
-
-## Phase 1 - Reliability
-
-Add:
-
-* Health checks
-* Automatic removal of unhealthy servers
-* Automatic recovery
-* Better fallback logic
-* Connection and read timeouts
-
-## Phase 2 - Better Load Distribution
-
-Add:
-
-* Weighted Round Robin
-* Least Connections
-* Random selection
-* Consistent Hashing
-
-## Phase 3 - Resilience
-
-Add:
-
-* Retry mechanism
-* Exponential backoff
-* Circuit breaker
-* Failure thresholds
-
-## Phase 4 - Security
-
-Add:
-
-* TLS termination
-* Authentication
-* Authorization
-* Header validation
-* Request filtering
-
-## Phase 5 - Observability
-
-Add:
-
-* Request metrics
-* Response time metrics
-* Error metrics
-* Backend health metrics
-* Distributed tracing
-* Structured logging
-
-## Phase 6 - Scalability
-
-Add:
-
-* Dynamic service discovery
-* Multiple Load Balancer instances
-* Distributed configuration
-* Container/Kubernetes support
-
-# 32. Complete Conceptual Flow
+# 31. Complete Conceptual Flow
 
 The complete flow of the current implementation can be summarized as:
 
@@ -1198,8 +1138,7 @@ The complete flow of the current implementation can be summarized as:
               +-------------+
                      |
                      v
-              Round Robin
-                  Logic
+              Round Robin Logic
                      |
                      v
            +---------+---------+
@@ -1223,46 +1162,42 @@ The complete flow of the current implementation can be summarized as:
 If the selected instance is unavailable:
 
 ```text
-Client
-  |
-  v
-Load Balancer
-  |
-  v
+      Client
+        |
+        v
+   Load Balancer
+        |
+        v
 Select Instance 2
-  |
-  X
-Instance 2 DOWN
-  |
-  v
+        |
+        X
+ Instance 2 DOWN
+        |
+        v
 Fallback Instance
-  |
-  v
-Instance 1
-  |
-  v
-Response
+        |
+        v
+    Instance 1
+        |
+        v
+      Response
 ```
 
-# 33. Key Concepts Demonstrated
+# 32. Key Concepts Demonstrated
 
 This project demonstrates several important backend concepts:
 
 * Load balancing
-* Horizontal scaling
 * Request distribution
 * Round Robin algorithm
-* Reverse proxy concept
 * HTTP request forwarding
-* `AtomicInteger`
 * Thread-safe counter updates
 * Integer overflow
-* `Math.floorMod()`
 * Basic failover
 * Generic URL routing
 * Multiple application instances
 
-# 34. What This Project Is and Is Not
+# 33. What This Project Is and Is Not
 
 ### This project is:
 
@@ -1282,7 +1217,7 @@ This project demonstrates several important backend concepts:
 
 Production systems require considerably more functionality around reliability, security, scalability, observability, networking, and failure handling.
 
-# 35. Conclusion
+# 34. Conclusion
 
 A Load Balancer solves a fundamental problem in distributed applications:
 
