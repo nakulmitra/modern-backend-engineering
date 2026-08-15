@@ -30,6 +30,10 @@ The Load Balancer decides which instance should process the request, forwards th
 
 This project demonstrates the basic concept by building a simple Load Balancer using Java and Spring Boot.
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/cbkOFMz2RrY)](https://youtu.be/cbkOFMz2RrY)
+
+> [Explore Code](../projects/LoadBalancer/)
+
 # 2. Why Do We Need a Load Balancer?
 
 Suppose we have a Spring Boot application running on a single server:
