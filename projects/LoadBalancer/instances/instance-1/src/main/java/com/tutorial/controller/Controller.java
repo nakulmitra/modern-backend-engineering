@@ -20,4 +20,9 @@ public class Controller {
 	public String hi() {
 		return "Response from hi method with instance no: " + instanceName;
 	}
+	
+	@GetMapping(value = "/health", produces = MediaType.TEXT_PLAIN_VALUE)
+	public String health() {
+		return "Server is up...";
+	}
 }
