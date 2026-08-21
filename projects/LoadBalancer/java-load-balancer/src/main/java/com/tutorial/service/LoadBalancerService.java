@@ -51,8 +51,8 @@ public class LoadBalancerService {
 			
 			for(int i = 0; i < helathyServers.size(); i++) {
 				if(!server.getUrl().equals(helathyServers.get(i).getUrl())) {
-					System.out.println("Forwarding request to new url " + servers.get(i).getUrl());
-					return client.get().uri(servers.get(i).getUrl() + path).retrieve().body(String.class);
+					System.out.println("Forwarding request to new url " + helathyServers.get(i).getUrl());
+					return client.get().uri(helathyServers.get(i).getUrl() + path).retrieve().body(String.class);
 				}
 			}
 			
