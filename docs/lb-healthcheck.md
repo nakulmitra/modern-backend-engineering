@@ -13,6 +13,8 @@ While that implementation successfully distributed requests, it had one major li
 
 This section improves our Load Balancer by introducing **Periodic Health Checks**, enabling it to send requests only to healthy backend instances.
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/bRDz6H1h0Po)](https://youtu.be/bRDz6H1h0Po)
+
 # Problem with the Previous Implementation
 
 Suppose we have two instances of the same application:
