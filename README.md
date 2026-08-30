@@ -12,8 +12,6 @@ This repository is designed for developers who want to go beyond CRUD applicatio
 * [Long Polling vs Server-Sent Events (SSE) vs WebSocket](/docs/longpolling-sse-websocket.md)
 * [Optimistic Locking vs Pessimistic Locking](/docs/database-locking.md)
 * [Optimistic Locking Isn't Enough | Implementing Retry Mechanism in Spring Boot](/docs/optimistic-locking-retry-mech.md)
-* [Build Your Own Load Balancer Using Java & Spring Boot](/docs/load-balancer.md)
-* [Adding Health Checks to a Java Load Balancer](/docs/lb-healthcheck.md)
 
 # What You'll Learn
 
