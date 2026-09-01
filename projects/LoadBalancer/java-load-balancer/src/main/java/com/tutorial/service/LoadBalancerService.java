@@ -23,7 +23,9 @@ public class LoadBalancerService {
 	@Autowired
 	private HealthChecker healthCheker;
 	
-	@Scheduled(fixedRate = 60000)
+	private static final int MAX_RETRY_ATTEMPTS = 1;
+	
+	@Scheduled(fixedRate = 1800000)
 	public void updateServerHealth() {
 		for(Server server: servers) {
 			boolean isHealthy = healthCheker.isHelathy(server);
@@ -34,30 +36,30 @@ public class LoadBalancerService {
 	}
 
 	public String fwdRequest(String path) {
-		List<Server> helathyServers = servers.stream().filter(Server::isHealthy).toList();
-		if(helathyServers.isEmpty()) {
-			throw new RuntimeException("No healthy server is available...");
+		List<Server> healthyServers = servers.stream().filter(Server::isHealthy).toList();
+		if(healthyServers.isEmpty()) {
+			return fallback();
 		}
 		
+		int index = Math.floorMod(counter.getAndIncrement(), healthyServers.size());
+		int maxAttempts = Math.min(MAX_RETRY_ATTEMPTS + 1, healthyServers.size());
 		
-		int index = Math.floorMod(counter.getAndIncrement(), helathyServers.size());
-		Server server = helathyServers.get(index);
-
-		System.out.println("Server url: " + server.getUrl() + " is used...");
-		try {
-			return client.get().uri(server.getUrl() + path).retrieve().body(String.class);
-		} catch (Exception ex) {
-			System.err.println("Server " + server.getUrl() + " is DOWN....");
+		for(int attempt = 0; attempt < maxAttempts; attempt++) {
+			int serverIndex = (attempt + index)%healthyServers.size();
+			Server server = healthyServers.get(serverIndex);
 			
-			for(int i = 0; i < helathyServers.size(); i++) {
-				if(!server.getUrl().equals(helathyServers.get(i).getUrl())) {
-					System.out.println("Forwarding request to new url " + helathyServers.get(i).getUrl());
-					return client.get().uri(helathyServers.get(i).getUrl() + path).retrieve().body(String.class);
-				}
+			System.out.println("Server: " + server.getUrl() + " is used...");
+			try {
+				return client.get().uri(server.getUrl() + path).retrieve().body(String.class);
+			}catch(Exception ex) {
+				System.err.println("Server " + server.getUrl() + " has failed....");
 			}
-			
-			throw new RuntimeException("No server is available...");
 		}
-
+		
+		return fallback();
+	}
+	
+	private String fallback() {
+		return "Service is currently unavalilabe. Please try again, after sometime...";
 	}
 }
