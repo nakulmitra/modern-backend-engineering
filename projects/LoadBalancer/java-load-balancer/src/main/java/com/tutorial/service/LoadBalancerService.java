@@ -25,7 +25,7 @@ public class LoadBalancerService {
 	
 	private static final int MAX_RETRY_ATTEMPTS = 1;
 	
-	@Scheduled(fixedRate = 1800000)
+	@Scheduled(fixedRate = 180000)
 	public void updateServerHealth() {
 		for(Server server: servers) {
 			boolean isHealthy = healthCheker.isHelathy(server);
