@@ -52,7 +52,7 @@ public class LoadBalancerService {
 			try {
 				return client.get().uri(server.getUrl() + path).retrieve().body(String.class);
 			}catch(Exception ex) {
-				System.err.println("Server " + server.getUrl() + " has failed....");
+				System.err.println("Server: " + server.getUrl() + " has failed...");
 			}
 		}
 		
@@ -60,6 +60,6 @@ public class LoadBalancerService {
 	}
 	
 	private String fallback() {
-		return "Service is currently unavalilabe. Please try again, after sometime...";
+		return "Service is currently unavailable. Please try again, after sometime...";
 	}
 }
