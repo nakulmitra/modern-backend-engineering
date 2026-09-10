@@ -26,6 +26,8 @@ If a request is routed to `8080` during this period, the request can fail.
 
 To handle this situation, we improve our existing exception-handling/failover mechanism by introducing a **Retry + Fallback strategy**.
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/Z7M_cuMs-xY)](https://youtu.be/Z7M_cuMs-xY)
+
 ## 1. What is Retry?
 
 Retry means attempting the same logical request again after an initial attempt fails.
