@@ -43,6 +43,8 @@ This creates unnecessary:
 
 A **Circuit Breaker** helps solve this problem.
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/s46RgLjE2HE)](https://youtu.be/s46RgLjE2HE)
+
 # 2. What is a Circuit Breaker?
 
 A Circuit Breaker is a resilience pattern used to prevent an application from repeatedly calling a service that is currently failing.
