@@ -15,6 +15,7 @@ This repository is designed for developers who want to go beyond CRUD applicatio
 * [Build Your Own Load Balancer Using Java & Spring Boot](/docs/load-balancer.md)
 * [Adding Health Checks to a Java Load Balancer](/docs/lb-healthcheck.md)
 * [Retry + Fallback Strategy to a Java Load Balancer](/docs/lb-with-retry.md)
+* [Circuit Breaker to a Java Load Balancer](/docs/lb-with-circuit-breaker.md)
 
 # What You'll Learn
 
