@@ -18,10 +18,10 @@ For example:
                        /        \
                       /          \
                      v            v
-              +-----------+  +-----------+
+              +------------+  +------------+
               | Instance 1 |  | Instance 2 |
               |   :8080    |  |   :8081    |
-              +-----------+  +-----------+
+              +------------+  +------------+
 ```
 
 The client communicates with the Load Balancer instead of directly communicating with a particular application instance.
