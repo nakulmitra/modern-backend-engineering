@@ -71,6 +71,8 @@ However, now another question appears:
 
 This is where the Load Balancer comes into the picture.
 
+![Flow Dig](https://github.com/nakulmitra/modern-backend-engineering/blob/master/images/loadbalancer/Load%20Balancer%20-%20RB%20flow.png)
+
 # 3. Local Development vs Production
 
 For this project, two instances are running on the same machine.

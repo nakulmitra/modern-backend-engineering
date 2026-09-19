@@ -61,6 +61,8 @@ The client doesn't need to know that the first backend server failed.
 
 The Load Balancer handles the failure internally and attempts to serve the request using another available server.
 
+![Flow Dig](https://github.com/nakulmitra/modern-backend-engineering/blob/master/images/loadbalancer/Retry%20%26%20Fallback.png)
+
 # 2. Why Do We Need Retry if We Already Have Health Checks?
 
 Health checks and retries solve different problems.
