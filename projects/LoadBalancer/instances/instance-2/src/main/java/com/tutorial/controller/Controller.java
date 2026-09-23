@@ -12,7 +12,8 @@ public class Controller {
 	private String instanceName;
 	
 	@GetMapping(value = "/hello", produces = MediaType.TEXT_PLAIN_VALUE)
-	public String hello() {
+	public String hello() throws InterruptedException {
+		Thread.sleep(30_000);
 		return "Response from " + instanceName;
 	}
 	

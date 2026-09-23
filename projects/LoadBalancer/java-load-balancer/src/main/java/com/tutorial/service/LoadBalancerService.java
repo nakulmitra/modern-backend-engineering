@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -23,7 +24,7 @@ public class LoadBalancerService {
 
 	private final AtomicInteger counter = new AtomicInteger();
 
-	private final RestClient client = RestClient.create();
+	private final RestClient client;
 	
 	@Autowired
 	private HealthChecker healthCheker;
@@ -31,6 +32,14 @@ public class LoadBalancerService {
 	private static final int MAX_RETRY_ATTEMPTS = 1;
 	
 	private Map<String, CircuitBreaker> circuitBreakers = new ConcurrentHashMap<>();
+	
+	public LoadBalancerService() {
+		SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
+		factory.setConnectTimeout(1_000);
+		factory.setReadTimeout(2_000);
+		
+		client = RestClient.builder().requestFactory(factory).build();
+	}
 	
 	@PostConstruct
 	public void initilizedCircuitBreaker() {
@@ -74,6 +83,7 @@ public class LoadBalancerService {
 				return response;
 			}catch(Exception ex) {
 				System.err.println("Server: " + server.getUrl() + " has failed...");
+				System.err.println("Exp message: " + ex.getMessage());
 				circuitBreaker.recordFailure();
 			}
 		}
