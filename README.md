@@ -16,6 +16,7 @@ This repository is designed for developers who want to go beyond CRUD applicatio
 * [Adding Health Checks to a Java Load Balancer](/docs/lb-healthcheck.md)
 * [Retry + Fallback Strategy to a Java Load Balancer](/docs/lb-with-retry.md)
 * [Circuit Breaker to a Java Load Balancer](/docs/lb-with-circuit-breaker.md)
+* [Adding Connection & Read Timeouts to a Java Load Balancer](/docs/read-n-conn-timeout.md)
 
 # What You'll Learn
 
