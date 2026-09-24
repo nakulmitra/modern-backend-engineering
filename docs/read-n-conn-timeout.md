@@ -34,6 +34,8 @@ If the Load Balancer waits indefinitely for Server 8080, the request can remain 
 
 This is where **Connection Timeout** and **Read Timeout** become important.
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/1y0yLSPpFdM)](https://youtu.be/1y0yLSPpFdM)
+
 # 1. Why Do We Need Timeouts?
 
 A Load Balancer communicates with backend servers over the network.
